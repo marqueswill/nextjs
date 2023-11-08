@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Roboto;
+  src: url("/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Caveat;
+  src: url("/fonts/Caveat-Bold.ttf");
+}
+
+.main {
+  font-family: RobotoSlab;
+}
