@@ -1,24 +1,30 @@
 import styles from "@/styles/Card.module.css";
-
-type Product = {
-  image: string;
-  id: number;
-  name: string;
-  ingredients: string;
-  price: number;
-  discount: number;
-};
+import { Product } from "@/types/types";
 
 // 
-export default function Card({ image, id, name, ingredients, price, discount }: Product) {
+// export default function Card({produto}: {produto:Product}) {
+//   return (
+//     <div className={styles.card}>
+//       <img src={produto.image} alt={produto.name} className={styles.img} />
+//       <div className={styles.info}>
+//         <h1 className={styles.nome}>{produto.name}</h1>
+//         <p className={styles.descricao}>{produto.ingredients}</p>
+//       </div>
+//       <h2 className={styles.preco}>R$ {produto.price}</h2>
+//     </div>
+//   );
+// }
+
+export default function Card({produto}: {produto:Product}) {
   return (
     <div className={styles.card}>
-      <img src={image} alt={name} className={styles.img} />
+      {/* <img src={produto.image} alt={produto.name} className={styles.img} /> */}
       <div className={styles.info}>
-        <h1 className={styles.nome}>{name}</h1>
-        <p className={styles.descricao}>{ingredients}</p>
+        <h1 className={styles.nome}>{produto.name}</h1>
+        <p className={styles.descricao}>{produto.descricao}</p>
+        <p className={styles.descricao}>{produto.ingredientes}</p>
       </div>
-      <h2 className={styles.preco}>R$ {price}</h2>
+      <h2 className={styles.preco}>R$ {produto.preco}</h2>
     </div>
   );
 }

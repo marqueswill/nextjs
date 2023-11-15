@@ -1,18 +1,25 @@
 import styles from "@/styles/SubscriptionCard.module.css";
+import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useState } from "react";
-
-function handleSubmit(e: FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  console.log("registrar");
-}
 
 export default function SubscriptionCard() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const router = useRouter();
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log("registrar");
+    router.push("/menu")
+  }
 
   return (
-    <div >
-      <form  className={styles.form} action="subscription_start" onSubmit={(e) => handleSubmit(e)}>
+    <div>
+      <form
+        className={styles.form}
+        action="subscription_start"
+        onSubmit={(e) => handleSubmit(e)}
+      >
         <div className={styles.formInput}>
           <label className={styles.label} htmlFor="name">
             Seu nome:
@@ -39,7 +46,7 @@ export default function SubscriptionCard() {
           />
         </div>
         <button className={styles.button} type="submit">
-          Registrar restaurante
+          Continuar
         </button>
       </form>
     </div>

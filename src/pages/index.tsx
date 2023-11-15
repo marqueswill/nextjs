@@ -2,12 +2,15 @@ import styles from "@/styles/Home.module.css";
 import Head from "next/head";
 import SubscriptionCard from "@/components/SubscriptionCard";
 import Separator from "@/components/Separator";
+import Slider from "@/components/Slider";
+import Carrossel from "@/components/Slider";
 
 // import styles from '@/styles/Home.module.css'
 
+
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>FazGostoso</title>
       </Head>
@@ -89,6 +92,6 @@ export default function Home() {
         </section>
         <Separator variation={4} />
       </main>
-    </div>
+    </>
   );
 }

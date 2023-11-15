@@ -13,6 +13,12 @@
   src: url("/fonts/Caveat-Bold.ttf");
 }
 
+html,body{
+  width: 100vw;
+  overflow-x: hidden;
+  margin:0;
+  padding: 0;
+}
 .main {
   font-family: RobotoSlab;
 }
