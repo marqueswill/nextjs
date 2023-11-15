@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
+  "/restaurant/menu": "pages/restaurant/menu.js",
   "/restaurant/products/[id]": "pages/restaurant/products/[id].js",
-  "/restaurant/menu": "pages/restaurant/menu.js"
+  "/": "pages/index.js"
 }

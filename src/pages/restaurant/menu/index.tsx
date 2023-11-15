@@ -1,5 +1,4 @@
-import ShowCategory from "@/components/ShowCategory";
-import { Category, Product } from "@/types/types";
+import { Category } from "@/types/types";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -14,19 +13,6 @@ export const getServerSideProps: GetServerSideProps<{
   const categorias = await res.json();
   return { props: { categorias } };
 };
-
-// async function getCategoryProducts(categoria: Category):Promise<Product[]> {
-//   const res = await fetch(
-//     `https://raw.githubusercontent.com/EdPPF/dados-listaNext/main/produtos/${categoria.id}.json`
-//   );
-
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
-
-//   const produtos:Product[] = await res.json();
-//   return produtos
-// }
 
 export default function MenuPage({
   categorias,

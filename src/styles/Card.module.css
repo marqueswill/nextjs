@@ -6,7 +6,7 @@
     /* padding: 10px; */
     margin: 10px;
     width: 500px;
-    height: 100px;
+    height: fit-content;
 
     display: flex;
     /* flex: 1;     */
@@ -42,7 +42,16 @@
 }
 
 .descricao {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 5px;
+    height: 60%;
+    color: #222;
+    /* display: flex;
+    justify-self: flex-end; */
+}
+
+.ingredientes {
+    font-size: 16px ;
     margin: 5px;
     height: 60%;
     color: #666;

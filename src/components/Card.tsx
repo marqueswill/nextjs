@@ -1,5 +1,6 @@
 import styles from "@/styles/Card.module.css";
 import { Product } from "@/types/types";
+import { join } from "path";
 
 // 
 // export default function Card({produto}: {produto:Product}) {
@@ -22,7 +23,7 @@ export default function Card({produto}: {produto:Product}) {
       <div className={styles.info}>
         <h1 className={styles.nome}>{produto.name}</h1>
         <p className={styles.descricao}>{produto.descricao}</p>
-        <p className={styles.descricao}>{produto.ingredientes}</p>
+        <p className={styles.ingredientes}>{Array.from(produto.ingredientes).join(", ")}</p>
       </div>
       <h2 className={styles.preco}>R$ {produto.preco}</h2>
     </div>
