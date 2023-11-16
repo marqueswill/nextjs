@@ -1,31 +1,26 @@
-// import { Category } from "@/types/types";
-// import { Category } from "@prisma/client";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Menu, prisma } from "../../../../prisma/prisma";
+import { Restaurant } from "../../../../prisma/prisma";
+import { getRestaurant } from "@/lib/restaurant";
 
 export const getServerSideProps: GetServerSideProps<{
-  restaurantMenu: Menu;
+  restaurant: Restaurant;
 }> = async (context) => {
-  const { menuId } = context.query;
-  const res = await fetch(`http://localhost:3000/api/restaurant/home/${menuId}`, {
-    method: "GET",
-  });
-  const restaurantMenu = await res.json();
-  console.log(restaurantMenu);
-  return { props: { restaurantMenu } };
+  const restaurantId = context.query.id;
+  const restaurant = await getRestaurant(restaurantId);
+  return { props: { restaurant } };
 };
 
 export default function RestaurantHomePage({
-  restaurantMenu,
+  restaurant,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
 
   return (
     <>
-      <div className="menu">
-        <h1>{restaurantMenu.name}</h1>
+      <div>
+        <h1>{restaurant.name}</h1>
       </div>
       <div>
         <h1>Restaurante: {router.query.id}</h1>
